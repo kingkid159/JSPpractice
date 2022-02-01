@@ -1,0 +1,41 @@
+
+
+jsp의 기본객체
+request		클라이언트의 요청 정보를 저장한다.
+response		응답정보를 저장한다.
+pageContext 	jsp 페이지에 대한 정보를 저장한다	기본객체를 직접 사용하는 경우는 드물지만
+									커스텀 태그를 구현할 때 사용한다
+			pageContext가 제공하는 기본 객체 접근 메서드
+			getRequest() 	request기본 객체를 구한다
+			getResponse()	response 기본 객체를 구한다
+			getSession()	session 기본 객체를 구한다
+			getServletContext() application 기본객체를 구한다
+			getServletConfig()	 config 기본객체를 구한다
+			getOut()		out 기본객체를 구한다
+			get Exception()	exception 기본 객체를 구한다	에러페이지에만 의미있음
+			getPage()		page 기본 객체를 구한다
+session 		http 세션 정보를 저장한다.
+application 		웹 어플리케이션에 대한 정보를 저장한다
+out			jsp 페이지가 생성하는 결과를 출력할 때 사용하는 출력 스트림이다.
+config		jsp 페이지에 대한 설정 정보를 저장한다
+page 			jsp 페이지를 구현한 자바 클래스 인스턴스이다
+exception		익셉션 객체이다 에러 페이지에서만 사용한다
+
+jsp 기본 객체와 영역
+page			하나의 jsp 페이지를 처리할 때 사용되는 영역	pageContext기본객체
+request		하나의 http 요청을 처리할 때 사용되는 영역	request 기본객체
+session		하나의 웹 브라우저와 관련된 영역			session 기본객체
+application		하나의 웹 어플리케이션과 관련된 영역		application 기본객체
+
+기본객체의 속성 메서드
+setAttribute(변수,값)	변수의 값을 지정한다
+ex)page.setAttribute(name,value)
+getAttribute(변수)		변수의 값을 불러온다 없으면 null리턴
+removeAttribute(변수)	변수 삭제
+getAttributeNames()	속성의 이름 목록을 구한다 pageConetext는 이메서드를 제공하지 않음
+
+속성의 쓰임새	
+pageConetext	주로 커스텀 태그에서 새로운 변수를 추가할 때 사용
+request		하나의 요청을 처리하는 데 사용하는 jsp페이지 사이에서 정보를 전달하기 위해사용
+session		사용자의 로그인 정보와 같은 것들을 저장
+application		임시 폴더 경로와 같이 웹 어플리케이션의 설정 정보를 주로 저장
