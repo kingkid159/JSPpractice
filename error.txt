@@ -1,0 +1,13 @@
+응답상태 코드별로 에러페이지 지정하기
+
+web.xml에서 
+<error-page>
+	<error-code>에러코드</error-code>
+	<location>해당에러에 보여줄 페이지 URI</location>
+</error-page>
+
+익셉션 타입별로 에러페이지 지정하기
+<error-page>
+	<exception-type>발생한 익셉션타입</exception-type>
+	<location>해당타입에서 보여줄 페이지</location>
+</error-page>
